@@ -23,7 +23,7 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+<link href="/css/hl_theme/gruvbox-dark.css?v=1.1.0" rel="stylesheet">
 
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
@@ -115,7 +115,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(3)</small>
+                <small>(4)</small>
             
         </div>
     </li>
@@ -168,7 +168,7 @@
         <div data-rel="嵌入式">
             <i class="fold iconfont icon-right"></i>
             嵌入式
-            <small>(1)</small>
+            <small>(2)</small>
         </div>
         
             <ul class="sub hide">
@@ -178,7 +178,7 @@
         <div data-rel="嵌入式&lt;---&gt;c语言">
             
             c语言
-            <small>(1)</small>
+            <small>(2)</small>
         </div>
         
     </li>
@@ -223,7 +223,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="3">
+<input type="hidden" id="yelog_site_posts_number" value="4">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -287,6 +287,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 嵌入式 c语言 "
+           href="/2023/08/04/02-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+           data-tag="c语言"
+           data-author="" >
+            <span class="post-title" title="02-基础知识">02-基础知识</span>
+            <span class="post-date" title="2023-08-04 19:05:09">2023/08/04</span>
+        </a>
         
         
         <a  class="全部文章 读书 读书笔记 "
@@ -362,7 +371,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-08-02 18:24:16'>2023-08-02 18:21</time>
+            发布时间 : <time class="date" title='最后更新: 2023-08-04 19:03:32'>2023-08-02 18:21</time>
         
     </div>
     <div class="article-meta">
@@ -384,7 +393,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -400,7 +409,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我学跟c语言也算是老相识，但也不能算是老相识，听过量子比特的c语言课，学校也开了c语言课，但学校讲的嘛，差强人意，量子比特的就在B站听了几节，上个暑假听了黑马程序员的c++从入门到精通，上到了核心编程阶段的封装，感觉才刚刚入门，也没有写过什么像样的项目，这不想要学习嵌入式嘛，再从头到尾听一遍c语言课好了，顺便呢做些笔记，那些没记住的知识点通过写博客的方式回忆，反复记忆。</p>
+<hr>
+<p>呃，先从哪里开始呢？要入手一种语言，听说读写四个步骤缺一不可，听说读，咱们从课程里面都得到不少，写，要在哪里写呢？这就要为我们的计算机搭建编写c的环境了。</p>
+<p>我接触到的有vs code，visual studio等一些集各种功能于一身的编译软件，安装就能写加编译，我看的这套课程呢，是嵌入式的，据老师所说，大部分编写什么算七八糟的都要在lunix命令行下进行，所以呢win电脑可以用cmd进行编译具体搭建如下。</p>
+<p>咱们的编译软件是mingw，下载链接 “<a target="_blank" rel="noopener" href="https://www.mingw-w64.org/%E2%80%9D">https://www.mingw-w64.org/”</a> ，进去后点downloads，往下找SourceForge,再拉到最下面选择版本，我这里选的是64位8.1.0版本的，下载后解压到某一个位置，最后打开“计算机属性-高级系统设置-高级-环境变量”，在系统变量的Path下新建一个，将解压的mingw中bin路径粘贴进去然后点确定，打开cmd，输入gcc看一下是否有异样，没有就说明编译环境搭建完毕。</p>
+<p>接下来在哪里写呢？哪里都可以的哈，记事本都能写，这里我下载的是Notepad++，很方便的哈。</p>
+<p>接下来就是写c之旅了。</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1584970096@qq.com </span>
     </div>
@@ -415,8 +431,6 @@
 
 
 
-
-    
 
 
 
@@ -569,24 +583,6 @@
     
 
     /*列表样式*/
-    
-    #post .pjax article .article-entry>ol, #post .pjax article .article-entry>ul, #post .pjax article>ol, #post .pjax article>ul{
-        border: #e2dede solid 1px;
-        border-radius: 10px;
-        padding: 10px 32px 10px 56px;
-    }
-    #post .pjax article .article-entry li>ol, #post .pjax article .article-entry li>ul,#post .pjax article li>ol, #post .pjax article li>ul{
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-    #post .pjax article .article-entry>ol>li, #post .pjax article .article-entry>ul>li,#post .pjax article>ol>li, #post .pjax article>ul>li{
-        margin-bottom: auto;
-        margin-left: auto;
-    }
-    #post .pjax article .article-entry li>ol>li, #post .pjax article .article-entry li>ul>li,#post .pjax article li>ol>li, #post .pjax article li>ul>li{
-        margin-bottom: auto;
-        margin-left: auto;
-    }
     
 
     /* 背景图样式 */

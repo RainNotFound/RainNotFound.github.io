@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>02-基础知识 | 纸上尘</title>
+  <title>03-流程控制 | 纸上尘</title>
   <meta name="keywords" content=" c语言 ">
-  <meta name="description" content="02-基础知识 | 纸上尘">
+  <meta name="description" content="03-流程控制 | 纸上尘">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="不正经的自我介绍 本文男，出生于2002年  21年入学东北电力大学，专业机械电子工程  呃。。。好像没得写了    至于为什么写博客，还得慢慢道来。 我本人是非常爱学习的（非文化课，文化课也是后来才产生的厌恶感，小学中学和其他人一样正常学都在班上第一第二），从小就喜欢折腾，从初中我有手机之后，就开始折腾软件破解，一开始是一些平时爱玩的单机手游，类似于地铁跑酷之类的，然后也折腾过网游（看别人的教程">
 <meta property="og:type" content="website">
@@ -377,9 +377,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-02-基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-03-流程控制" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">02-基础知识</h1>
+        <h1 class="article-title">03-流程控制</h1>
     
     <div class="article-meta">
         
@@ -406,7 +406,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-08-07 21:11:31'>2023-08-04 19:05</time>
+            发布时间 : <time class="date" title='最后更新: 2023-08-06 09:33:44'>2023-08-06 09:33</time>
         
     </div>
     <div class="article-meta">
@@ -428,7 +428,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E6%89%AB%E7%9B%B2"><span class="toc-text">知识扫盲</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-text">新建文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91"><span class="toc-text">编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A1%86%E6%9E%B6"><span class="toc-text">C程序的基础框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%BD%A2%E5%BC%8F"><span class="toc-text">数据表示形式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F"><span class="toc-text">声明变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D%E7%A7%B0"><span class="toc-text">变量名称</span></a></li></ol></li></ol></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -444,35 +444,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="知识扫盲"><a href="#知识扫盲" class="headerlink" title="知识扫盲"></a>知识扫盲</h1><h2 id="新建文件"><a href="#新建文件" class="headerlink" title="新建文件"></a>新建文件</h2><p>新建文件的拓展名必须以 “$.c$” 为结尾</p>
-<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>还没学过《编译原理》这门课啦，就只能会操作不懂原理。</p>
-<p>在cmd命令框中先用 “cd+c文件存放路径“ 到达你存放c文件的文件夹，然后输入 “gcc 文件名.c”</p>
-<p>若语法没有错误会在当前文件夹生成一个 “a.exe” 的可执行文件，双击或者在cmd中输入 “a.exe” 就会运行。若有语法错误则会告诉你哪里有错误。</p>
-<p>默认编译的名称为 “a.exe” ,也可以输入 “gcc 文件名.c -o 你想的名字” 来改变编译后文件生成名字。</p>
-<h2 id="C程序的基础框架"><a href="#C程序的基础框架" class="headerlink" title="C程序的基础框架"></a>C程序的基础框架</h2><pre><code class="c">#include &lt;stdio.h&gt;	//编译预处理指令
-
-int main()			//程序的主入口函数main
-&#123;					//程序（函数、功能）开始的标志
-    
-    
-    return 0;		//程序退出前返回给调用者（操作系统）的值
-&#125;					//程序（函数、功能）结束的标志
-</code></pre>
-<p>“&#x2F;&#x2F;“是注释，本行后面的内容不会被编译</p>
-<p>“&#x2F;*  *&#x2F;“ 星号之间的内容不会被编译</p>
-<h2 id="数据表示形式"><a href="#数据表示形式" class="headerlink" title="数据表示形式"></a>数据表示形式</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h4><p>顾名思义可变的量，像数学表达式的$x,y,z$ 啊，要先声明再使用</p>
-<p>怎么声明呢，像下面那样</p>
-<pre><code class="c">数据类型+变量名
-int a = 3;
-int b;
-b = a+1;
-</code></pre>
-<p>变量有四个属性：数据类型、变量名、变量值、地址（储存单元）</p>
-<p>按我目前理解，数据类型是申请多大的空间，存储单元是申请的地址。</p>
-<h4 id="变量名称"><a href="#变量名称" class="headerlink" title="变量名称"></a>变量名称</h4><p>变量的名只能由 “字母、数字、下划线” 组成，且不能以数字开头</p>
-<p>c中是会区分大小写的</p>
-<p>命名方法常采用 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E6%B3%95/7560610?fromtitle=%E9%AA%86%E9%A9%BC%E5%91%BD%E5%90%8D%E6%B3%95&fromid=7794053">“驼峰命名法” </a> 来增加同行之间的交流</p>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1584970096@qq.com </span>
     </div>

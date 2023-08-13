@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>02-基础知识 | 纸上尘</title>
-  <meta name="keywords" content=" c语言 ">
-  <meta name="description" content="02-基础知识 | 纸上尘">
+  <title>c语言指针 | 纸上尘</title>
+  <meta name="keywords" content=" 指针 ">
+  <meta name="description" content="c语言指针 | 纸上尘">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="不正经的自我介绍 本文男，出生于2002年  21年入学东北电力大学，专业机械电子工程  呃。。。好像没得写了    至于为什么写博客，还得慢慢道来。 我本人是非常爱学习的（非文化课，文化课也是后来才产生的厌恶感，小学中学和其他人一样正常学都在班上第一第二），从小就喜欢折腾，从初中我有手机之后，就开始折腾软件破解，一开始是一些平时爱玩的单机手游，类似于地铁跑酷之类的，然后也折腾过网游（看别人的教程">
 <meta property="og:type" content="website">
@@ -377,9 +377,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-02-基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-c语言指针" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">02-基础知识</h1>
+        <h1 class="article-title">c语言指针</h1>
     
     <div class="article-meta">
         
@@ -399,14 +399,14 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">c语言</a>
+            <a class="color3">指针</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-08-07 21:11:31'>2023-08-04 19:05</time>
+            发布时间 : <time class="date" title='最后更新: 2023-08-12 09:48:08'>2023-08-09 14:20</time>
         
     </div>
     <div class="article-meta">
@@ -428,7 +428,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E6%89%AB%E7%9B%B2"><span class="toc-text">知识扫盲</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6"><span class="toc-text">新建文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91"><span class="toc-text">编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E7%A1%80%E6%A1%86%E6%9E%B6"><span class="toc-text">C程序的基础框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%BD%A2%E5%BC%8F"><span class="toc-text">数据表示形式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F"><span class="toc-text">声明变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%90%8D%E7%A7%B0"><span class="toc-text">变量名称</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E9%92%88"><span class="toc-text">指针</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-text">引入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88-%E5%9C%B0%E5%9D%80"><span class="toc-text">指针 &#x3D;&#x3D; 地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F"><span class="toc-text">指针变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E6%8C%87%E9%92%88"><span class="toc-text">为什么要用指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E4%B8%80"><span class="toc-text">场景一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%E4%BA%8C"><span class="toc-text">场景二</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%8C%87%E9%92%88"><span class="toc-text">数组的指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E6%8C%87%E5%90%91%E6%95%B0%E7%BB%84"><span class="toc-text">定义一个指针变量指向数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E5%81%8F%E7%A7%BB%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="toc-text">指针偏移遍历数组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-text">指针和二维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88"><span class="toc-text">数组指针</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="toc-text">函数指针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E6%96%B9%E6%B3%95"><span class="toc-text">声明方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0%E6%A1%88%E4%BE%8B"><span class="toc-text">练习案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="toc-text">指针数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84"><span class="toc-text">什么是指针数组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E9%92%88%E5%87%BD%E6%95%B0"><span class="toc-text">指针函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%EF%BC%88%E5%A4%9A%E7%BA%A7%EF%BC%89%E6%8C%87%E9%92%88"><span class="toc-text">二级（多级）指针</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -444,34 +444,313 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="知识扫盲"><a href="#知识扫盲" class="headerlink" title="知识扫盲"></a>知识扫盲</h1><h2 id="新建文件"><a href="#新建文件" class="headerlink" title="新建文件"></a>新建文件</h2><p>新建文件的拓展名必须以 “$.c$” 为结尾</p>
-<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>还没学过《编译原理》这门课啦，就只能会操作不懂原理。</p>
-<p>在cmd命令框中先用 “cd+c文件存放路径“ 到达你存放c文件的文件夹，然后输入 “gcc 文件名.c”</p>
-<p>若语法没有错误会在当前文件夹生成一个 “a.exe” 的可执行文件，双击或者在cmd中输入 “a.exe” 就会运行。若有语法错误则会告诉你哪里有错误。</p>
-<p>默认编译的名称为 “a.exe” ,也可以输入 “gcc 文件名.c -o 你想的名字” 来改变编译后文件生成名字。</p>
-<h2 id="C程序的基础框架"><a href="#C程序的基础框架" class="headerlink" title="C程序的基础框架"></a>C程序的基础框架</h2><pre><code class="c">#include &lt;stdio.h&gt;	//编译预处理指令
+        <h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><h3 id="指针-地址"><a href="#指针-地址" class="headerlink" title="指针 &#x3D;&#x3D; 地址"></a>指针 &#x3D;&#x3D; 地址</h3><pre><code class="c">#include &lt;stdio.h&gt;
+int main()
+&#123;
+    int a = 10;
+    printf(&quot;a=%d\n&quot;,a);
+    printf(&quot;a的地址是：0x%p\n&quot;,&amp;a);//%p是地址的占位符，取a的地址需要加取址符&amp;
+    printf(&quot;a=%d\n&quot;,*(&amp;a));//打印a的另一种思路，*号将地址的数据取出来
+    return 0;
+&#125;
+</code></pre>
+<p>指针就是地址，地址就是指针</p>
+<h3 id="指针变量"><a href="#指针变量" class="headerlink" title="指针变量"></a>指针变量</h3><pre><code class="c">#include &lt;stdio.h&gt;
 
-int main()			//程序的主入口函数main
-&#123;					//程序（函数、功能）开始的标志
-    
-    
-    return 0;		//程序退出前返回给调用者（操作系统）的值
-&#125;					//程序（函数、功能）结束的标志
+int main()
+&#123;
+    //什么是整型变量？存放整形数的变量
+    //什么是字符变量？存放字符型数据的变量
+    //什么是指针变量？存放指针的变量
+    //什么是指针变量？存放地址的变量
+    int a = 10;
+    int *p;//这里*是一个标识符，高速系统我是一个指针变量，用来保存别人的地址和下方的运算符不同
+    p = *a;
+    printf(&quot;变量名访问a=%d\n&quot;,a);
+    printf(&quot;a的地址是：0x%p\n&quot;,&amp;a);//%p是地址的占位符，取a的地址需要加取址符&amp;
+    printf(&quot;地址访问a=%d\n&quot;,*(&amp;a));//打印a的另一种思路，*号将地址的数据取出来
+    printf(&quot;指针访问a=%d\n&quot;,*p);
+    return 0;
+&#125;
 </code></pre>
-<p>“&#x2F;&#x2F;“是注释，本行后面的内容不会被编译</p>
-<p>“&#x2F;*  *&#x2F;“ 星号之间的内容不会被编译</p>
-<h2 id="数据表示形式"><a href="#数据表示形式" class="headerlink" title="数据表示形式"></a>数据表示形式</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h4 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h4><p>顾名思义可变的量，像数学表达式的$x,y,z$ 啊，要先声明再使用</p>
-<p>怎么声明呢，像下面那样</p>
-<pre><code class="c">数据类型+变量名
-int a = 3;
-int b;
-b = a+1;
+<h2 id="为什么要用指针"><a href="#为什么要用指针" class="headerlink" title="为什么要用指针"></a>为什么要用指针</h2><h3 id="场景一"><a href="#场景一" class="headerlink" title="场景一"></a>场景一</h3><p>写一个简单的交换数据的函数</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+int main()
+&#123;
+    int data1 = 10;
+    int data2 = 20;
+    int temp;
+
+    printf(&quot;交换前data1=%d,data2=%d\n&quot;,data1,data2);
+    temp = data1;
+    data1 = data2;
+    data2 = temp;
+    printf(&quot;交换后data1=%d,data2=%d\n&quot;,data1,data2);
+    
+    return 0;
+&#125;
 </code></pre>
-<p>变量有四个属性：数据类型、变量名、变量值、地址（储存单元）</p>
-<p>按我目前理解，数据类型是申请多大的空间，存储单元是申请的地址。</p>
-<h4 id="变量名称"><a href="#变量名称" class="headerlink" title="变量名称"></a>变量名称</h4><p>变量的名只能由 “字母、数字、下划线” 组成，且不能以数字开头</p>
-<p>c中是会区分大小写的</p>
-<p>命名方法常采用 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E6%B3%95/7560610?fromtitle=%E9%AA%86%E9%A9%BC%E5%91%BD%E5%90%8D%E6%B3%95&fromid=7794053">“驼峰命名法” </a> 来增加同行之间的交流</p>
+<p>编译运行后是可以成功交换的</p>
+<p>然后我们把这个封装成一个函数</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+void changeData(int data1,int data2)
+&#123;
+    int temp;
+    temp = data1;
+    data1 = data2;
+    data2 = temp;
+&#125;
+int main()
+&#123;
+    int data1 = 10;
+    int data2 = 20;
+
+    printf(&quot;交换前data1=%d,data2=%d\n&quot;,data1,data2);
+    changeData(data1,data2);
+    printf(&quot;交换后data1=%d,data2=%d\n&quot;,data1,data2);
+    
+    return 0;
+&#125;
+</code></pre>
+<p>编译运行后发现行不通，这里换的只是changeData被调用后临时申请的data1和data2</p>
+<p>打印的是main运行时的data1和data2，changeData被调用后管不到原来的那块空间</p>
+<p>这时候指针的作用就出来了，我们传给changeData函数data1和data2的地址试试看</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+void changeData(int *p_data1,int *p_data2)
+&#123;
+    int temp;
+    temp = *p_data1;
+    *p_data1 = *p_data2;
+    *p_data2 = temp;
+&#125;
+int main()
+&#123;
+    int data1 = 10;
+    int data2 = 20;
+
+    printf(&quot;交换前data1=%d,data2=%d\n&quot;,data1,data2);
+    changeData(&amp;data1,&amp;data2);
+    printf(&quot;交换后data1=%d,data2=%d\n&quot;,data1,data2);
+    
+    return 0;
+&#125;
+</code></pre>
+<p>编译运行后，唉？成功！！</p>
+<h3 id="场景二"><a href="#场景二" class="headerlink" title="场景二"></a>场景二</h3><p>指向一个固定的地址</p>
+<h2 id="数组的指针"><a href="#数组的指针" class="headerlink" title="数组的指针"></a>数组的指针</h2><h3 id="定义一个指针变量指向数组"><a href="#定义一个指针变量指向数组" class="headerlink" title="定义一个指针变量指向数组"></a>定义一个指针变量指向数组</h3><pre><code class="c">include &lt;stdio.h&gt;
+    
+int main()
+&#123;
+    int arr[3] = &#123;1,2,3&#125;;
+    int *p;
+    
+    p = &amp;arr[0];//数组的首地址就是收个元素的地址
+    p = arr;//数组名就是数组的首地址
+    
+    return 0;
+&#125;
+</code></pre>
+<h3 id="指针偏移遍历数组"><a href="#指针偏移遍历数组" class="headerlink" title="指针偏移遍历数组"></a>指针偏移遍历数组</h3><pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int arr[3] = &#123;1,2,3&#125;;
+    int *p;
+    
+    //p = &amp;arr[0];
+    p = arr;
+    
+    /*
+    printf(&quot;0元素是：%d\n&quot;,*p);
+    printf(&quot;1元素是：%d\n&quot;,*p+1);//这里指针+1不是数学运算中的+1，而是指针偏移了一个int类型的字节数；
+    printf(&quot;2元素是：%d\n&quot;,*p+2);
+    */
+    printf(&quot;第一次遍历\n&quot;);
+    for(int i=0;i&lt;3;i++)
+    &#123;
+        printf(&quot;%d&quot;,*p+i);//这种写法没改变p的值
+    &#125;
+    putchar(&#39;\n&#39;);
+    //第二次遍历
+    printf(&quot;第二次遍历\n&quot;);
+    for(int i=0;i&lt;3;i++)
+    &#123;
+        printf(&quot;%d&quot;,*p++);//p++改变了p的值下一次遍历的时候需要回到数组首地址
+    &#125;
+    putchar(&#39;\n&#39;);
+    //第三次遍历错误写法
+     printf(&quot;第二次遍历错误写法\n&quot;);
+    for(int i=0;i&lt;3;i++)
+    &#123;
+        printf(&quot;%d&quot;,*p++);
+    &#125;
+    putchar(&#39;\n&#39;);
+     //第三次遍历正确写法
+    printf(&quot;第二次遍历正确写法\n&quot;);
+    p = arr;//回到首地址
+    for(int i=0;i&lt;3;i++)
+    &#123;
+        printf(&quot;%d&quot;,*p++);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p>指针正确访问时，比下标法更高效；下标法可读性强，更容易理解。</p>
+<p>###见怪不怪写法</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int arr[3] = &#123;1,2,3&#125;;
+    int *p = arr;
+    
+    for(int i=0;i&lt;3;i++)
+    &#123;
+        printf(&quot;%d &quot;,*(arr+i));//数组名当做指针偏移访问
+        printf(&quot;%d &quot;,p[i]);//指针当做数组名，下标法访问
+    &#125;
+    putchar(&#39;\n&#39;);
+    //数组名和指针区别
+    /*
+    for(int i=0;i&lt;3;i++)
+    &#123;
+        printf(&quot;%d &quot;,*arr++);//arr++不行，常量指针
+    &#125;*/
+    printf(&quot;sizeof arr is %d\n&quot;,sizeof(arr));//3 * 4 = 12
+    printf(&quot;sizeof arr is %d\n&quot;,sizeof(p));//os 用8个字节表示地址
+    printf(&quot;sizeof int is %d\n&quot;,sizeof(int));
+    printf(&quot;sizeof pointer is %d\n&quot;,sizeof(int *));//os 用8个字节表示地址
+    printf(&quot;sizeof pointer is %d\n&quot;,sizeof(char *));//os 用8个字节表示地址
+    return 0;
+&#125;
+</code></pre>
+<p>1.指针当做数组名，用下标法访问</p>
+<p>2.数组名当做指针偏移访问</p>
+<p>3.数组名和指针区别：拿数组名偏移不可以进行数学运算，原因是数组名表示的是常量指针，不可以改变；sizeof的时候大小也不一样</p>
+<h2 id="指针和二维数组"><a href="#指针和二维数组" class="headerlink" title="指针和二维数组"></a>指针和二维数组</h2><pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int arr[3][4]=&#123;&#123;1,3,5,7&#125;,&#123;9,11,13,15&#125;,&#123;17,19,21,23&#125;&#125;;
+    printf(&quot;arr是父数组地址：%p,偏移1后是：%p\n&quot;,arr,arr+1);//偏移了4*4个字节
+    printf(&quot;arr[0]是子数组地址：%p,偏移1后是：%p\n&quot;,arr[0],arr[0]+1);//偏移4个字节
+    return 0;
+&#125;
+</code></pre>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int arr[3][4]=&#123;&#123;11,22,33,44&#125;,&#123;55,66,77,88&#125;,&#123;99,111,222,333&#125;&#125;;
+    int i,j;
+    
+    for(i=0;i&lt;3;i++)
+    &#123;
+        for(j=0;j&lt;4;j++)
+        &#123;
+            printf(&quot;address:0x%p,data:%d \n&quot;,&amp;arr[i][j],arr[i][j]);
+            printf(&quot;address:0x%p,data:%d \n&quot;,arr[i]+j,*(arr[i]+j));
+            printf(&quot;address:0x%p,data:%d \n&quot;,*(arr+i)+j,*(*(arr+i)+j));
+            printf(&quot;===============================================\n&quot;);
+        &#125;
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int arr[3][4]=&#123;&#123;11,22,33,44&#125;,&#123;55,66,77,88&#125;,&#123;99,111,222,333&#125;&#125;;
+    int i,j;
+    int (*p)[4];//申请
+    p = arr;//这样指针完全和数组名用法相同
+    for(i=0;i&lt;3;i++)
+    &#123;
+        for(j=0;j&lt;4;j++)
+        &#123;
+            printf(&quot;address:0x%p,data:%d \n&quot;,&amp;arr[i][j],arr[i][j]);
+            printf(&quot;address:0x%p,data:%d \n&quot;,arr[i]+j,*(arr[i]+j));
+            printf(&quot;address:0x%p,data:%d \n&quot;,*(arr+i)+j,*(*(arr+i)+j));
+            printf(&quot;address:0x%p,data:%d \n&quot;,*(p+i)+j,*(*(p+i)+j));
+            printf(&quot;===============================================\n&quot;);
+        &#125;
+    &#125;
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h2><h3 id="声明方法"><a href="#声明方法" class="headerlink" title="声明方法"></a>声明方法</h3><pre><code class="c">#include &lt;stdio.h&gt;
+
+void printTest()//声明一个无参函数
+&#123;
+    printf(&quot;this is a test\n&quot;);
+&#125;
+
+int addData(int data)//声明一个有参函数
+&#123;
+    return ++data;
+&#125;
+
+int main()
+&#123;
+    printTest();//函数调用
+    
+    void (*p)();//定义一个函数指针变量
+    int (*p2)(int data);//有参函数的指针
+    
+    p = printTest;//指向函数
+    p2 = addData;
+    
+    (*p)();//指针调用函数
+    printf(&quot;p2的调用：%d&quot;,(*p2)(10));
+    
+    return 0;
+&#125;
+</code></pre>
+<h3 id="练习案例"><a href="#练习案例" class="headerlink" title="练习案例"></a>练习案例</h3><h2 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h2><h3 id="什么是指针数组"><a href="#什么是指针数组" class="headerlink" title="什么是指针数组"></a>什么是指针数组</h3><p>一个数组，若其元素均为指针类型数据，称为<strong>指针数组</strong>，也就是说，指针数组中的每一个元素都存放一个地址，相当于一个指针变量。</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int a=5;
+    int b=2;
+    
+    int* p[2]=&#123;&amp;a,&amp;b&#125;;//定义一个指针数组
+    
+    printf(&quot;%p\n&quot;,&amp;a);
+    printf(&quot;%p\n&quot;,p[0]);
+    printf(&quot;%d\n&quot;,*(p[0]));
+    return 0;
+&#125;
+</code></pre>
+<h2 id="指针函数"><a href="#指针函数" class="headerlink" title="指针函数"></a>指针函数</h2><p>一个函数可以返回整型值、字符值、实型值，也可以赶回指针型的数据，即地址</p>
+<h2 id="二级（多级）指针"><a href="#二级（多级）指针" class="headerlink" title="二级（多级）指针"></a>二级（多级）指针</h2><pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int data = 100;
+    int *p = &amp;data;
+    printf(&quot;data的地址是：%p\n&quot;,&amp;data);
+    printf(&quot;p保存的data的地址是：%p,内容是：%d\n&quot;,p,*p);
+    /*
+    printf(&quot;p的地址是：%p\n&quot;,&amp;p);
+    int *pp = &amp;p;
+    printf(&quot;pp保存的p的地址是：%p\n&quot;,pp);
+    printf(&quot;*pp是：%p\n&quot;,*pp);
+    */
+    int **p2;
+    p2 = &amp;p;
+    printf(&quot;p2保存的p的地址是：%p\n&quot;,p2);
+    printf(&quot;*p2是：%p\n&quot;,*p2);
+    printf(&quot;**p2来访问data:%d\n&quot;,**p2);
+    
+    return 0;
+&#125;
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1584970096@qq.com </span>

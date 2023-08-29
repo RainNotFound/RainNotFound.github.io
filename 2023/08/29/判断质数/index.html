@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>01-C语言老相识or初识 | 纸上尘</title>
-  <meta name="keywords" content=" c语言 ">
-  <meta name="description" content="01-C语言老相识or初识 | 纸上尘">
+  <title>判断质数 | 纸上尘</title>
+  <meta name="keywords" content=" 质数判断 ">
+  <meta name="description" content="判断质数 | 纸上尘">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="不正经的自我介绍 本文男，出生于2002年  21年入学东北电力大学，专业机械电子工程  呃。。。好像没得写了    至于为什么写博客，还得慢慢道来。 我本人是非常爱学习的（非文化课，文化课也是后来才产生的厌恶感，小学中学和其他人一样正常学都在班上第一第二），从小就喜欢折腾，从初中我有手机之后，就开始折腾软件破解，一开始是一些平时爱玩的单机手游，类似于地铁跑酷之类的，然后也折腾过网游（看别人的教程">
 <meta property="og:type" content="website">
@@ -481,9 +481,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-01-C语言老相识or初识" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-判断质数" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">01-C语言老相识or初识</h1>
+        <h1 class="article-title">判断质数</h1>
     
     <div class="article-meta">
         
@@ -495,7 +495,7 @@
             
             <a  data-rel="嵌入式">嵌入式</a> > 
             
-            <a  data-rel="嵌入式&lt;---&gt;c语言">c语言</a>
+            <a  data-rel="嵌入式&lt;---&gt;c练习">c练习</a>
             
         </span>
         
@@ -503,14 +503,14 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">c语言</a>
+            <a class="color5">质数判断</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-08-04 19:03:32'>2023-08-02 18:21</time>
+            发布时间 : <time class="date" title='最后更新: 2023-08-29 12:50:18'>2023-08-29 11:20</time>
         
     </div>
     <div class="article-meta">
@@ -532,7 +532,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%A8%E6%95%B0"><span class="toc-text">质数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%B4%A8%E6%95%B0"><span class="toc-text">什么是质数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A"><span class="toc-text">方法一：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%952"><span class="toc-text">方法2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89"><span class="toc-text">方法三</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%9B%9B"><span class="toc-text">方法四</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -548,13 +548,131 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我学跟c语言也算是老相识，但也不能算是老相识，听过量子比特的c语言课，学校也开了c语言课，但学校讲的嘛，差强人意，量子比特的就在B站听了几节，上个暑假听了黑马程序员的c++从入门到精通，上到了核心编程阶段的封装，感觉才刚刚入门，也没有写过什么像样的项目，这不想要学习嵌入式嘛，再从头到尾听一遍c语言课好了，顺便呢做些笔记，那些没记住的知识点通过写博客的方式回忆，反复记忆。</p>
-<hr>
-<p>呃，先从哪里开始呢？要入手一种语言，听说读写四个步骤缺一不可，听说读，咱们从课程里面都得到不少，写，要在哪里写呢？这就要为我们的计算机搭建编写c的环境了。</p>
-<p>我接触到的有vs code，visual studio等一些集各种功能于一身的编译软件，安装就能写加编译，我看的这套课程呢，是嵌入式的，据老师所说，大部分编写什么算七八糟的都要在lunix命令行下进行，所以呢win电脑可以用cmd进行编译具体搭建如下。</p>
-<p>咱们的编译软件是mingw，下载链接 “<a target="_blank" rel="noopener" href="https://www.mingw-w64.org/%E2%80%9D">https://www.mingw-w64.org/”</a> ，进去后点downloads，往下找SourceForge,再拉到最下面选择版本，我这里选的是64位8.1.0版本的，下载后解压到某一个位置，最后打开“计算机属性-高级系统设置-高级-环境变量”，在系统变量的Path下新建一个，将解压的mingw中bin路径粘贴进去然后点确定，打开cmd，输入gcc看一下是否有异样，没有就说明编译环境搭建完毕。</p>
-<p>接下来在哪里写呢？哪里都可以的哈，记事本都能写，这里我下载的是Notepad++，很方便的哈。</p>
-<p>接下来就是写c之旅了。</p>
+        <h1 id="质数"><a href="#质数" class="headerlink" title="质数"></a>质数</h1><h2 id="什么是质数"><a href="#什么是质数" class="headerlink" title="什么是质数"></a>什么是质数</h2><p>我们这样定义质数：<strong>如果自然数 p &gt; 1 的因数只有1和它本身，那么 p 是质数</strong>。</p>
+<p>它有如下性质：</p>
+<ul>
+<li>如果一个数是质数，那么它是自然数。</li>
+<li>如果一个数是质数，那么它不是合数。</li>
+<li>如果一个数是质数，那么它大于等于2。</li>
+</ul>
+<h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><p>最简单的一个方法也是最容易想到的一个方法，就是把想要验证的数挨个除以比它小的数，如果都除不尽，那就是质数，否则不是质数。</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int n;
+    char a = 1;
+    
+    printf(&quot;请输入一个自然数：&quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+    
+    if(n &gt;= 2)
+    &#123;
+        for(int i=2; i&lt;n; i++)
+        &#123;
+            if(n%i == 0)
+            &#123;
+                a = 0;
+                break;//一旦存在一个数是其因数，就不是质数
+            &#125;
+        &#125;
+        if(a==1)
+        &#123;
+            printf(&quot;是质数\n&quot;);
+        &#125;else&#123;
+            printf(&quot;不是质数\n&quot;);
+        &#125;
+    //0, 1不是质数
+    &#125;else if(n &lt; 2 &amp;&amp; n &gt;=0)&#123;
+        printf(&quot;不是质数\n&quot;);
+    &#125;else&#123;
+        printf(&quot;@请输入一个自然数\n&quot;);
+    &#125;
+    
+    printf(&quot;End\n&quot;);
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h2><p>当一个数不是质数时，必定存在两个约数，一个大于等于sqrt(n)，**另一个小于sqrt(n)**。利用这种特性，可以对方法1进行改进，只判断数n能否被小于sqrt(n)的数整除。</p>
+<p>只需要对方法一稍微修改一下。</p>
+<pre><code class="c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main()
+&#123;
+    int n;
+    char a = 1;
+    
+    printf(&quot;请输入一个自然数：&quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+    
+    if(n &gt;= 2)
+    &#123;
+        for(int i=2; i&lt;=(int)sqrt(n); i++)
+        &#123;
+            if(n%i == 0)
+            &#123;
+                a = 0;
+                break;//一旦存在一个数是其因数，就不是质数
+            &#125;
+        &#125;
+        if(a==1)
+        &#123;
+            printf(&quot;是质数\n&quot;);
+        &#125;else&#123;
+            printf(&quot;不是质数\n&quot;);
+        &#125;
+    //0, 1不是质数
+    &#125;else if(n &lt; 2 &amp;&amp; n &gt;=0)&#123;
+        printf(&quot;不是质数\n&quot;);
+    &#125;else&#123;
+        printf(&quot;@请输入一个自然数\n&quot;);
+    &#125;
+    printf(&quot;End\n&quot;);
+    
+    return 0;
+&#125;
+</code></pre>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><p>任一偶数一定能分解为2和其他偶数&#x2F;奇数的积，因此<strong>一个数不能被2整除，那么这个数一定不能被其他偶数整除</strong>。利用这个特点，可以对方法2进行改进，判断数n能否被小于sqrt(n)的奇数整除。</p>
+<pre><code class="c">
+public static boolean isPrime(int n) &#123;
+    if (n &lt;= 3) &#123;
+        return n &gt; 1;
+    &#125;
+    //只需判断一个数能否被小于sqrt(n)的奇数整除
+    int sqrt = (int)Math.sqrt(n);
+    for (int i = 3; i &lt;= sqrt; i += 2) &#123;
+        if(n % 2 == 0 || n % i == 0) &#123;
+            return false;
+        &#125;
+    &#125;
+    return true;
+&#125;
+</code></pre>
+<h2 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h2><p>质数的分布具有特点，经过证明可以得到，（<strong>大于等于5的）质数一定和6的倍数相邻，一定是6x-1或6x-1。</strong>利用这种特性。可以对整数进行筛选，只判断那些是6x-1或6x-1的整数是否为质数。</p>
+<pre><code>证明过程如下：
+令x≥1，将大于等于5的自然数表示如下： ······6x-1，6x，6x+1，6x+2，6x+3，6x+4······（相邻6个数为一组）在以上的数字中，6x、6x+2和6x+4是偶数，一定不是质数；6x+3可以分解为3(2x+1)，不是质数，因此质数只能是6x-1和6x+1。
+</code></pre>
+<pre><code class="c">
+public static boolean isPrime(int n) &#123;
+    if (n &lt;= 3) &#123;
+        return n &gt; 1;
+    &#125;
+    // 只有6x-1和6x+1的数才有可能是质数
+    if (n % 6 != 1 &amp;&amp; n % 6 != 5) &#123;
+        return false;
+    &#125;
+    // 判断这些数能否被小于sqrt(n)的奇数整除
+    int sqrt = (int) Math.sqrt(n);
+    for (int i = 5; i &lt;= sqrt; i += 6) &#123;
+        if (n % i == 0 || n % (i + 2) == 0) &#123;
+            return false;
+        &#125;
+    &#125;
+    return true;
+&#125;
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1584970096@qq.com </span>

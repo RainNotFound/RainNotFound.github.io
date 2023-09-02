@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>链表 | 个人学习博客</title>
-  <meta name="keywords" content=" 链表 ">
-  <meta name="description" content="链表 | 个人学习博客">
+  <title>杨辉三角 | 个人学习博客</title>
+  <meta name="keywords" content=" 输出杨辉三角 ">
+  <meta name="description" content="杨辉三角 | 个人学习博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="不正经的自我介绍 本文男，出生于2002年  21年入学东北电力大学，专业机械电子工程  呃。。。好像没得写了    至于为什么写博客，还得慢慢道来。 我本人是非常爱学习的（非文化课，文化课也是后来才产生的厌恶感，小学中学和其他人一样正常学都在班上第一第二），从小就喜欢折腾，从初中我有手机之后，就开始折腾软件破解，一开始是一些平时爱玩的单机手游，类似于地铁跑酷之类的，然后也折腾过网游（看别人的教程">
 <meta property="og:type" content="website">
@@ -494,9 +494,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-链表" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-杨辉三角" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">链表</h1>
+        <h1 class="article-title">杨辉三角</h1>
     
     <div class="article-meta">
         
@@ -508,7 +508,7 @@
             
             <a  data-rel="嵌入式">嵌入式</a> > 
             
-            <a  data-rel="嵌入式&lt;---&gt;c语言">c语言</a>
+            <a  data-rel="嵌入式&lt;---&gt;c练习">c练习</a>
             
         </span>
         
@@ -516,14 +516,14 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">链表</a>
+            <a class="color2">输出杨辉三角</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-08-15 14:15:49'>2023-08-15 14:15</time>
+            发布时间 : <time class="date" title='最后更新: 2023-09-02 10:56:51'>2023-09-02 10:52</time>
         
     </div>
     <div class="article-meta">
@@ -545,7 +545,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8"><span class="toc-text">链表</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92"><span class="toc-text">杨辉三角</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80"><span class="toc-text">方法一</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -561,7 +561,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1>
+        <h1 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h1><p>在初中，我们就知道，杨辉三角的两个腰边的数都是 1，其它位置的数都是上顶上两个数之和。这就是我们用C语言写杨辉三角的关键之一。</p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>先定义一个二维数组：$a[N][N]$，略大于要打印的行数。再令两边的数为 1，即当每行的第一个数和最后一个数为 1。a[i][0]&#x3D;a[i][i-1]&#x3D;1，n 为行数。除两边的数外，任何一个数为上两顶数之和，即 a[i][j] &#x3D; a[i-1][j-1] + a[i-1][j]。最后输出杨辉三角。代码如下：</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1584970096@qq.com </span>
     </div>

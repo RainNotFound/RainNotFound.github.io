@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>结构体 | 个人学习博客</title>
-  <meta name="keywords" content=" 结构体 ">
-  <meta name="description" content="结构体 | 个人学习博客">
+  <title>c语言求回文数 | 个人学习博客</title>
+  <meta name="keywords" content=" c语言小练习 ">
+  <meta name="description" content="c语言求回文数 | 个人学习博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="不正经的自我介绍 本文男，出生于2002年  21年入学东北电力大学，专业机械电子工程  呃。。。好像没得写了    至于为什么写博客，还得慢慢道来。 我本人是非常爱学习的（非文化课，文化课也是后来才产生的厌恶感，小学中学和其他人一样正常学都在班上第一第二），从小就喜欢折腾，从初中我有手机之后，就开始折腾软件破解，一开始是一些平时爱玩的单机手游，类似于地铁跑酷之类的，然后也折腾过网游（看别人的教程">
 <meta property="og:type" content="website">
@@ -554,9 +554,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-结构体" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-c语言求回文数" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">结构体</h1>
+        <h1 class="article-title">c语言求回文数</h1>
     
     <div class="article-meta">
         
@@ -568,7 +568,7 @@
             
             <a  data-rel="嵌入式">嵌入式</a> > 
             
-            <a  data-rel="嵌入式&lt;---&gt;c语言">c语言</a>
+            <a  data-rel="嵌入式&lt;---&gt;c练习">c练习</a>
             
         </span>
         
@@ -576,14 +576,14 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">结构体</a>
+            <a class="color2">c语言小练习</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-08-14 15:42:56'>2023-08-14 10:35</time>
+            发布时间 : <time class="date" title='最后更新: 2023-09-05 17:37:16'>2023-09-05 17:33</time>
         
     </div>
     <div class="article-meta">
@@ -605,7 +605,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">结构体</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E4%BD%BF%E7%94%A8%E5%8F%98%E9%87%8F"><span class="toc-text">定义一个结构体和使用变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E6%95%B0%E7%BB%84"><span class="toc-text">结构体和数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E7%A5%A8%E7%B3%BB%E7%BB%9F"><span class="toc-text">选票系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E6%8C%87%E9%92%88"><span class="toc-text">结构体指针</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E6%B1%82%E5%9B%9E%E6%96%87%E6%95%B0"><span class="toc-text">C语言求回文数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-text">问题分析</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -621,88 +621,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><h2 id="定义一个结构体和使用变量"><a href="#定义一个结构体和使用变量" class="headerlink" title="定义一个结构体和使用变量"></a>定义一个结构体和使用变量</h2><pre><code class="c">struct Student
-&#123;
-    int num;
-    char name[32];
-    char sex;
-    int age;
-    double score;
-    char addr[32];
-&#125;;
-</code></pre>
-<p>结构体相当于一个模板，不要赋初值。</p>
-<h2 id="结构体和数组"><a href="#结构体和数组" class="headerlink" title="结构体和数组"></a>结构体和数组</h2><pre><code class="c">#include &lt;stdio.h&gt;
-struct Student
-&#123;
-    int num;
-    char name[32];
-    char sex[1];
-    int age;
-    double score;
-    char addr[32];
-&#125;;
-
-int main()
-&#123;
-    int a;
-    
-    //struct Student arr[3]=&#123;&#123;num,name,sex,age,score,addr&#125;,&#123;...&#125;,&#123;...&#125;&#125;;
-    //里面放结构体定义的数据类型
-    int len;
-    struct Student arr[3]=&#123;
-        &#123;1,&quot;张三&quot;,&quot;男&quot;,18,90,&quot;上海&quot;&#125;,
-        &#123;2,&quot;李四&quot;,&quot;男&quot;,18,90.5,&quot;广州&quot;&#125;,
-        &#123;3,&quot;王五&quot;,&quot;男&quot;,18,89,&quot;北京&quot;&#125;&#125;;
-    len = sizeof(arr)/sizeof(arr[0]);	
-    for(int i;i&lt;len;i++)
-    &#123;
-        printf(&quot;学号：%d,姓名：%s,性别：%s,年龄：%d,成绩：%.1lf,住址：%s\n&quot;,
-        arr[i].num,arr[i].name,arr[i].sex,arr[i].age,arr[i].score,arr[i].addr);
-    &#125;		
-    
-    return 0;
-&#125;
-</code></pre>
-<h2 id="选票系统"><a href="#选票系统" class="headerlink" title="选票系统"></a>选票系统</h2><h2 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h2><pre><code class="c">#include &lt;stdio.h&gt;
-struct Student
-&#123;
-    int num;
-    char name[32];
-    char sex[2];
-    int age;
-    double score;
-    char addr[32];
-&#125;;
-
-int main()
-&#123;
-    int a;
-    int len;
-    struct Student arr[3]=&#123;
-        &#123;1,&quot;张三&quot;,&quot;男&quot;,18,90,&quot;上海&quot;&#125;,
-        &#123;2,&quot;李四&quot;,&quot;男&quot;,18,90.5,&quot;广州&quot;&#125;,
-        &#123;3,&quot;王五&quot;,&quot;男&quot;,18,89,&quot;北京&quot;&#125;&#125;;
-    len = sizeof(arr)/sizeof(arr[0]);	
-    
-    struct Student *p;//定义结构体指针
-    p = arr;//结构体指针指向结构体数组
-    
-    for(int i;i&lt;len;i++)
-    &#123;
-        printf(&quot;学号：%d,姓名：%s,性别：%s,年龄：%d,成绩：%.1lf,住址：%s\n&quot;,
-            p-&gt;num,p-&gt;name,p-&gt;sex,p-&gt;age,p-&gt;score,p-&gt;addr);//访问的时候用-&gt;
-        p++;//指针偏移
-        
- /*
-       printf(&quot;学号：%d,姓名：%s,性别：%s,年龄：%d,成绩：%.1lf,住址：%s\n&quot;,
-        (p+i)-&gt;num,(p+i)-&gt;name,(p+i)-&gt;sex,(p+i)-&gt;age,(p+i)-&gt;score,(p+i)-&gt;addr);
-        */
-    &#125;		
-        
-    return 0;
-&#125;
-</code></pre>
+        <h1 id="C语言求回文数"><a href="#C语言求回文数" class="headerlink" title="C语言求回文数"></a>C语言求回文数</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>打印所有不超过n（取n&lt;256）的其平方具有对称性质的数（也称回文数）。</p>
+<h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p>对于要判定的数n计算出其平方后（存于a），按照“回文数”的定义要将最高位与最低位、次高位与次低位……进行比较，若彼此相等则为回文数。此算法需要知道平方数的位数，再一一将每一位分解、比较，此方法对于位数已知且位数不是太多的数来说比较适用。</p>
+<p>此问题可借助数组来解决。将平方后的（a的）每一位进行分解，按从低位到高位的顺序依次暂存到数组中，再将数组中的元素按照下标从大到小的顺序重新将其组合成一个数众（如n&#x3D;15，则a&#x3D;225且k&#x3D;522），若k等于n×n则可判定n为回文数。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1584970096@qq.com </span>
